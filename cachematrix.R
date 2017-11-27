@@ -1,8 +1,14 @@
 ## Assignment 2: Lexical Scoping, saving a matrix inverse in the cache
 ## SALoseke
+## you can
+## Clear the Console
+cat("\014")
+## Clear the data Environment
+rm(list=ls())
 
-## This function will save a matrix inverse to cache for future use, when we need it again it
-## can 
+
+## This function will save a matrix inverse to cache for future use, when we need it again.
+## the inverse can be looked up in the cache instead of recomputing. 
 
 makeCacheMatrix <- function(x = matrix()) {
           minv <- NULL
@@ -20,7 +26,7 @@ makeCacheMatrix <- function(x = matrix()) {
 }
 
 
-## this function will retreive the inverse if it exists, if not it will compute the inverse and 
+## this function will retreive the inverse if it exists, if not, it will compute the inverse and 
 ## Save in cache
 
 cacheSolve <- function(x, ...) {
@@ -38,23 +44,21 @@ cacheSolve <- function(x, ...) {
 
 
 # Examples
-myMat <- matrix(c(4, 2, 7, 6), nrow = 2, ncol = 2)
-myMat2 <- matrix(c(4, 2, 7, 6, 5, 1, 8, 3, 9), nrow = 3, ncol = 3)
-myInv <- makeCacheMatrix(myMat)
-myInv$get()
-myInv$getinv()
+#myMat <- matrix(c(4, 2, 7, 6), nrow = 2, ncol = 2)
+#myMat2 <- matrix(c(4, 2, 7, 6, 5, 1, 8, 3, 9), nrow = 3, ncol = 3)
+#myInv <- makeCacheMatrix(myMat)
+#myInv$get()
+#myInv$getinv()
 
-myInv$set(myMat2)
-myInv$get()
+#cacheSolve(myInv)
 
+#myInv$getinv()
+#myInv$set(myMat2)
 
-myInv$setinv()
+#cacheSolve(myInv)
 
-cacheSolve(myInv)
-myInv$getinv()
-myInv$setinv(myMat2)
-myInv$get()
-myInv$getinv()
+#myInv$get()
+#myInv$getinv()
 
 
 
